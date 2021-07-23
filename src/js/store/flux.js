@@ -2,7 +2,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			myURL: "https://swapi.dev/api",
-			characters: [],
+			people: [],
 			planets: [],
 			vehicles: [],
 			favorites: []
@@ -24,7 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const response = await fetch(`${getStore().myURL}${endPoint}`);
 					const data = await response.json();
 					console.log(data);
-					setStore({ characters: data.results });
+					setStore({ people: data.results });
 				} catch (error) {
 					throw new Error(error);
 				}
