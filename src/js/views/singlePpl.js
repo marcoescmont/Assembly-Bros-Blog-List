@@ -13,9 +13,9 @@ export const SinglePpl = props => {
 
 			<hr className="my-4" />
 
-			<Link to="/">
+			<Link to="/people">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
+					Back
 				</span>
 			</Link>
 		</div>

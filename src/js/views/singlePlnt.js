@@ -9,13 +9,13 @@ export const SinglePlnt = props => {
 	return (
 		<div className="jumbotron">
 			<h1 className="display-4">{store.planets[params.theid].name}</h1>
-			{store.planets[params.theid].films}
+			{store.planets[params.theid].rotation_period}
 
 			<hr className="my-4" />
 
-			<Link to="/">
+			<Link to="/planets">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
-					Back home
+					Back
 				</span>
 			</Link>
 		</div>
