@@ -11,7 +11,7 @@ export const Navbar = () => {
 	};
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light bg-dark">
 			<Link to="/">
 				<h1 className="navbar-brand mb-0">
 					<i className="fab fa-jedi-order" />
@@ -24,7 +24,7 @@ export const Navbar = () => {
 					align="end"
 					title={`Favorites (${store.favorites.length})`}
 					id="dropdown-menu-align-right"
-					variant="success">
+					variant="danger">
 					{store.favorites.map((item, index) => {
 						return (
 							<Dropdown.Item key={index} eventKey={index}>

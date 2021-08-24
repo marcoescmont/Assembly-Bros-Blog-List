@@ -4,6 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import { propTypes } from "react-bootstrap/esm/Image";
 import { Context } from "../store/appContext.js";
+import "../../styles/home.scss";
 
 export const Cards = props => {
 	const [found, setFound] = useState(false);
@@ -23,11 +24,8 @@ export const Cards = props => {
 	};
 
 	return (
-		<Card style={{ width: "18rem" }}>
-			<Card.Img
-				variant="top"
-				src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Star_wars2.svg/1200px-Star_wars2.svg.png"
-			/>
+		<Card style={{ width: "18rem", background: "lightgray", border: "2px solid black" }}>
+			<Card.Img variant="top" src={props.Img} />
 			<Card.Body>
 				<Card.Title>{props.Title}</Card.Title>
 				<Card.Text>
@@ -41,7 +39,7 @@ export const Cards = props => {
 						Learn More!
 					</Button>
 				</Link>
-				<Button variant="outline-warning" className="float-right" onClick={() => handleFavorite(props.Title)}>
+				<Button variant="outline-danger" className="float-right" onClick={() => handleFavorite(props.Title)}>
 					{found ? <i className="fas fa-heart" /> : <i className="far fa-heart" />}
 				</Button>
 			</Card.Body>

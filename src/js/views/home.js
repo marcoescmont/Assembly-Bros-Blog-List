@@ -9,14 +9,14 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div>
+		<div className="image py-3">
 			<div>
 				<h1>
 					<Link className="text-decoration-none" to="/planet">
-						<span className="text-dark">Planets</span>
+						<span className="text-white">Planets</span>
 					</Link>
 				</h1>
-				<div className="text-center mt-5 overflow-auto d-flex justify-content-between">
+				<div className="text-center mt-5 d-flex justify-content-around">
 					{store.planets.map((item, index) => {
 						return (
 							<Cards
@@ -28,6 +28,7 @@ export const Home = () => {
 								Text3={"Orbital Period: " + item.orbital_period}
 								Text4={"Population: " + item.population}
 								Title={item.name}
+								Img={"https://exoplanets.nasa.gov/internal_resources/116"}
 							/>
 						);
 					})}
@@ -36,7 +37,7 @@ export const Home = () => {
 			<div className="mt-2">
 				<h1>
 					<Link className="text-decoration-none" to="/character">
-						<span className="text-dark">People</span>
+						<span className="text-white">People</span>
 					</Link>
 				</h1>
 				<div className="text-center mt-5 d-flex justify-content-around">
@@ -47,9 +48,10 @@ export const Home = () => {
 								index={index}
 								type={"singlePpl"}
 								Text={"Height: " + item.height}
-								Text2={"Weigth: " + item.mass}
+								Text2={"Weigth: " + item.weight}
 								Text3={"Birth Year: " + item.birth_year}
 								Title={item.name}
+								Img={"https://wallpaperaccess.com/full/368503.jpg"}
 							/>
 						);
 					})}
@@ -58,7 +60,7 @@ export const Home = () => {
 			<div className="mt-2">
 				<h1>
 					<Link className="text-decoration-none" to="/vehicle">
-						<span className="text-dark">Vehicles</span>
+						<span className="text-white">Vehicles</span>
 					</Link>
 				</h1>
 				<div className="text-center mt-5 d-flex justify-content-around">
@@ -71,6 +73,9 @@ export const Home = () => {
 								Text={"Model: " + item.model}
 								Text2={"Manufacturer: " + item.manufacturer}
 								Title={item.name}
+								Img={
+									"https://static.planetminecraft.com/files/resource_media/screenshot/1423/starwarsvehiclescollection.jpg"
+								}
 							/>
 						);
 					})}

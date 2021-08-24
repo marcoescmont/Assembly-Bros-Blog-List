@@ -8,9 +8,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: []
 		},
 		actions: {
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 			initializeFunction: () => {
 				getActions().loadCharacter();
 				getActions().loadPlanets();
