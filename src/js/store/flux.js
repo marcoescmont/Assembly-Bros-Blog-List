@@ -1,14 +1,13 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			myURL: "https://swapi.dev/api",
+			myURL: "https://3000-harlequin-earwig-xkme9a30.ws-us16.gitpod.io",
 			people: [],
 			planets: [],
 			vehicles: [],
 			favorites: []
 		},
 		actions: {
-			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
@@ -16,70 +15,50 @@ const getState = ({ getStore, getActions, setStore }) => {
 				getActions().loadCharacter();
 				getActions().loadPlanets();
 				getActions().loadVehicles();
-				// getActions().loadFavorites();
+				getActions().addFavorite();
 			},
 			loadCharacter: async () => {
-				const endPoint = "/people/";
+				const endPoint = "/character/";
 				try {
 					const response = await fetch(`${getStore().myURL}${endPoint}`);
 					const data = await response.json();
 					console.log(data);
-					setStore({ people: data.results });
+					setStore({ people: data });
 				} catch (error) {
 					throw new Error(error);
 				}
 			},
 			loadPlanets: async () => {
-				const endPoint = "/planets/";
+				const endPoint = "/planet/";
 				try {
 					const response = await fetch(`${getStore().myURL}${endPoint}`);
 					const data = await response.json();
 					console.log(data);
-					setStore({ planets: data.results });
+					setStore({ planets: data });
 				} catch (error) {
 					throw new Error(error);
 				}
 			},
 			loadVehicles: async () => {
-				const endPoint = "/vehicles/";
+				const endPoint = "/vehicle/";
 				try {
 					const response = await fetch(`${getStore().myURL}${endPoint}`);
 					const data = await response.json();
 					console.log(data);
-					setStore({ vehicles: data.results });
+					setStore({ vehicles: data });
 				} catch (error) {
 					throw new Error(error);
 				}
 			},
-			// loadFavorites: async () => {
-			// 	const endPoint = "/favorites/";
-			// 	try {
-			// 		const response = await fetch(`${getStore().myURL}${endPoint}`);
-			// 		const data = await response.json();
-			// 		console.log(data);
-			// 		setStore({ favorites: data.results });
-			// 	} catch (error) {
-			// 		throw new Error(error);
-			// 	}
-			// },
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.vehicles.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ vehicles: demo });
+			addFavorite: favoriteName => {
+				let newFavorites = getStore().favorites;
+				let found = newFavorites.find(item => item == favoriteName);
+				if (found) {
+					newFavorites = newFavorites.filter(item => item != favoriteName);
+				} else {
+					newFavorites = [...newFavorites, favoriteName];
+				}
+				setStore({ favorites: newFavorites });
 			}
 		}
 	};

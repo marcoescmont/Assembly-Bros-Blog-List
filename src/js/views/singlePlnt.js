@@ -13,7 +13,7 @@ export const SinglePlnt = props => {
 
 			<hr className="my-4" />
 
-			<Link to="/planets">
+			<Link to="/planet">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back
 				</span>

@@ -13,7 +13,7 @@ export const SingleVcl = props => {
 
 			<hr className="my-4" />
 
-			<Link to="/vehicles">
+			<Link to="/vehicle">
 				<span className="btn btn-primary btn-lg" href="#" role="button">
 					Back
 				</span>

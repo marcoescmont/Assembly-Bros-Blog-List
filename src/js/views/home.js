@@ -12,15 +12,17 @@ export const Home = () => {
 		<div>
 			<div>
 				<h1>
-					<Link className="text-decoration-none" to="/planets">
+					<Link className="text-decoration-none" to="/planet">
 						<span className="text-dark">Planets</span>
 					</Link>
 				</h1>
-				<div className="text-center mt-5 d-flex justify-content-around">
+				<div className="text-center mt-5 overflow-auto d-flex justify-content-between">
 					{store.planets.map((item, index) => {
 						return (
 							<Cards
 								key={index}
+								index={index}
+								type={"singlePlnt"}
 								Text={"Climate: " + item.climate}
 								Text2={"Diameter: " + item.diameter}
 								Text3={"Orbital Period: " + item.orbital_period}
@@ -33,7 +35,7 @@ export const Home = () => {
 			</div>
 			<div className="mt-2">
 				<h1>
-					<Link className="text-decoration-none" to="/people">
+					<Link className="text-decoration-none" to="/character">
 						<span className="text-dark">People</span>
 					</Link>
 				</h1>
@@ -42,6 +44,8 @@ export const Home = () => {
 						return (
 							<Cards
 								key={index}
+								index={index}
+								type={"singlePpl"}
 								Text={"Height: " + item.height}
 								Text2={"Weigth: " + item.mass}
 								Text3={"Birth Year: " + item.birth_year}
@@ -53,7 +57,7 @@ export const Home = () => {
 			</div>
 			<div className="mt-2">
 				<h1>
-					<Link className="text-decoration-none" to="/vehicles">
+					<Link className="text-decoration-none" to="/vehicle">
 						<span className="text-dark">Vehicles</span>
 					</Link>
 				</h1>
@@ -62,6 +66,8 @@ export const Home = () => {
 						return (
 							<Cards
 								key={index}
+								index={index}
+								type={"singleVcl"}
 								Text={"Model: " + item.model}
 								Text2={"Manufacturer: " + item.manufacturer}
 								Title={item.name}
