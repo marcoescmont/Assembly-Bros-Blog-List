@@ -13,10 +13,15 @@ export const Navbar = () => {
 
 	return (
 		<nav className="navbar navbar-light bg-dark">
-			<Link to="/">
+			<Link to="/home">
 				<img className="resize" src="https://img.icons8.com/ios/452/star-wars.png" />
 			</Link>
 			<div className="d-flex justify-content-end">
+				<Link to="/">
+					<button type="submit" className="btn btn-primary mb-2" value="Log in">
+						Login
+					</button>
+				</Link>
 				<DropdownButton
 					align="end"
 					title={`Favorites (${store.favorites.length})`}
