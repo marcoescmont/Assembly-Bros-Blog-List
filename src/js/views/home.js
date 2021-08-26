@@ -48,7 +48,7 @@ export const Home = () => {
 								index={index}
 								type={"singlePpl"}
 								Text={"Height: " + item.height}
-								Text2={"Weigth: " + item.weight}
+								Text2={"Weight: " + item.weight}
 								Text3={"Birth Year: " + item.birth_year}
 								Title={item.name}
 								Img={"https://wallpaperaccess.com/full/368503.jpg"}

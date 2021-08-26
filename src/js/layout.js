@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { Login } from "./views/Login";
 import { Planets } from "./views/Planets";
 import { Vehicles } from "./views/Vehicles";
 import { People } from "./views/People";
@@ -26,8 +27,11 @@ const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/">
+						<Route exact path="/home">
 							<Home />
+						</Route>
+						<Route exact path="/">
+							<Login />
 						</Route>
 						<Route exact path="/vehicle">
 							<Vehicles />

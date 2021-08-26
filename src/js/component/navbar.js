@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { DropdownButton, Dropdown } from "react-bootstrap";
+import { DropdownButton, Dropdown, Col, Form } from "react-bootstrap";
 import { Context } from "../store/appContext.js";
+import "../../styles/home.scss";
 
 export const Navbar = () => {
 	const { store, actions } = useContext(Context);
@@ -13,13 +14,9 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-dark">
 			<Link to="/">
-				<h1 className="navbar-brand mb-0">
-					<i className="fab fa-jedi-order" />
-					Star Wars
-					<i className="fab fa-galactic-republic" />
-				</h1>
+				<img className="resize" src="https://img.icons8.com/ios/452/star-wars.png" />
 			</Link>
-			<div className="ml-auto">
+			<div className="d-flex justify-content-end">
 				<DropdownButton
 					align="end"
 					title={`Favorites (${store.favorites.length})`}
